@@ -1,0 +1,148 @@
+/* Base Styles for Body, HTML, and Global Settings */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    color: var(--text-light); /* Warna teks default */
+    line-height: 1.6;
+}
+
+/* --- Navbar Styles --- */
+.navbar {
+    width: 100%;
+    background-color: var(--card-bg);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.1);
+    position: fixed; /* Navbar tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Pastikan navbar di atas elemen lain */
+}
+
+.navbar-brand .logo {
+    color: var(--green-glow);
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    transition: text-shadow 0.3s ease;
+}
+
+.navbar-brand .logo:hover {
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Jarak antar item menu */
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--green-glow);
+    transform: scaleX(0); /* Awalnya tidak terlihat */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--green-glow);
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    transform: scaleX(1); /* Terlihat saat hover/active */
+    transform-origin: bottom left;
+}
+
+/* --- Footer Styles --- */
+.footer {
+    width: 100%;
+    background-color: var(--card-bg);
+    color: var(--text-medium);
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 -5px 20px rgba(0, 255, 0, 0.1);
+    margin-top: auto; /* Mendorong footer ke bagian bawah halaman */
+}
+
+.footer p {
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-medium);
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--green-glow);
+    text-shadow: 0 0 10px var(--green-glow-alpha);
+}
+
+/* --- Responsiveness for Navbar & Footer --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    .navbar-nav {
+        gap: 15px;
+    }
+    .footer p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column; /* Stack item navbar secara vertikal */
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+    .navbar-nav {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Izinkan item menu untuk wrapping */
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+    }
+}

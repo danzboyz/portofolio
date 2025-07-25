@@ -1,0 +1,425 @@
+/* --- Hero Section Styles (General & Page Specific) --- */
+.hero-section {
+    width: 100%;
+    height: 60vh; /* Tinggi hero section */
+    background-size: cover; /* Pastikan gambar latar menutupi area */
+    background-position: center; /* Pusatkan gambar latar */
+    background-repeat: no-repeat;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px; /* Offset untuk navbar fixed */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero background images (UPDATE THESE PATHS TO YOUR ACTUAL IMAGES!) */
+.hero-section.hero-home {
+    background-image: url('../images/sky.jpg');
+}
+.hero-section.hero-skills {
+    background-image: url('../images/sky.jpg');
+}
+.hero-section.hero-about {
+    background-image: url('../images/sky.jpg');
+}
+.hero-section.hero-contact {
+    background-image: url('../images/sky.jpg');
+}
+
+/* Overlay untuk memastikan teks di hero section terbaca */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay semi-transparan */
+    z-index: 1; /* Di bawah konten hero */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Di atas overlay */
+}
+
+.hero-title {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--green-glow);
+    text-shadow: 0 0 20px var(--green-glow-alpha);
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin-bottom: 40px;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: transparent;
+    border: 2px solid var(--green-glow);
+    border-radius: 50px;
+    color: var(--green-glow);
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px var(--green-glow-alpha);
+}
+
+.hero-button:hover {
+    background-color: var(--green-glow);
+    color: var(--dark-bg);
+    box-shadow: 0 0 25px var(--green-glow);
+    transform: translateY(-3px);
+}
+
+.hero-button i {
+    margin-left: 10px;
+}
+
+/* --- Main Content Area (General for all pages) --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1; /* Memastikan main content mengisi ruang yang tersedia */
+    padding-top: 50px;
+    padding-bottom: 80px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--green-glow);
+    text-shadow: 0 0 15px var(--green-glow-alpha);
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+/* --- Card Grid for Homepage --- */
+.card-grid {
+    display: flex;
+    gap: 40px; /* Jarak antar kartu */
+    flex-wrap: wrap; /* Izinkan kartu untuk wrap ke baris baru */
+    justify-content: center;
+    padding: 20px;
+}
+
+/* --- Skills Grid Layout --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Kolom responsif */
+    gap: 30px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- About Page Layout --- */
+.about-page-content {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto 80px auto;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 255, 0, 0.15);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.about-section {
+    margin-bottom: 60px;
+    padding: 20px;
+}
+
+.about-section:last-child {
+    margin-bottom: 0;
+}
+
+.about-section h3 {
+    font-size: 2em;
+    color: var(--green-glow);
+    text-shadow: 0 0 10px var(--green-glow-alpha);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.subsection-title {
+    font-size: 1.8em;
+    color: var(--green-glow);
+    text-shadow: 0 0 8px var(--green-glow-alpha);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Profile Intro Section */
+.profile-intro {
+    display: flex;
+    flex-direction: column; /* Default: tumpuk vertikal di layar kecil */
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+.profile-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: var(--text-medium);
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+}
+
+/* Mission & Vision Section */
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+/* --- Contact Page Layout --- */
+.contact-page-content {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto 80px auto;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 255, 0, 0.15);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Default: tumpuk vertikal */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-info, .contact-form-wrapper {
+    flex: 1;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #0c0c0c; /* Sedikit lebih gelap */
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.08);
+}
+
+.contact-info h3, .contact-form-wrapper h3 {
+    font-size: 1.8em;
+    color: var(--green-glow);
+    text-shadow: 0 0 8px var(--green-glow-alpha);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    color: var(--text-medium);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info p i {
+    color: var(--green-glow);
+    font-size: 1.3em;
+}
+
+.contact-social {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-social a {
+    font-size: 1.8em;
+    color: var(--text-medium);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-social a:hover {
+    color: var(--green-glow);
+    text-shadow: 0 0 12px var(--green-glow-alpha);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px); /* Kurangi padding dari 100% */
+    padding: 12px 10px;
+    background-color: var(--input-bg);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-shadow: inset 0 0 5px rgba(0, 255, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--green-glow);
+    box-shadow: 0 0 15px var(--green-glow-alpha);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Izinkan user mengubah tinggi textarea */
+    min-height: 100px;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--green-glow);
+    border: none;
+    border-radius: 50px;
+    color: var(--dark-bg);
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 20px var(--green-glow-alpha);
+    width: auto;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #39ff14; /* Sedikit lebih terang saat hover */
+    box-shadow: 0 8px 25px var(--green-glow);
+    transform: translateY(-2px);
+}
+
+.submit-button i {
+    margin-left: 10px;
+}
+
+
+/* --- Responsive Adjustments for Layouts --- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5em;
+    }
+    .hero-subtitle {
+        font-size: 1em;
+    }
+    .hero-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .card-grid {
+        gap: 30px;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .about-page-content, .contact-page-content {
+        padding: 20px;
+        width: 95%;
+    }
+    .profile-intro {
+        gap: 30px;
+    }
+    .profile-text {
+        text-align: center;
+    }
+    .contact-info h3, .contact-form-wrapper h3 {
+        font-size: 1.6em;
+    }
+    .contact-info p {
+        font-size: 1em;
+    }
+    .contact-form input, .contact-form textarea {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (min-width: 768px) { /* Adjust profile intro & contact for larger screens */
+    .profile-intro {
+        flex-direction: row;
+        text-align: left;
+    }
+    .profile-text {
+        flex: 1;
+        padding-left: 40px;
+    }
+    .profile-image-container {
+        flex-shrink: 0;
+    }
+    .contact-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 70vh;
+        padding-top: 150px;
+    }
+    .hero-title {
+        font-size: 1.8em;
+    }
+    .hero-subtitle {
+        font-size: 0.9em;
+    }
+    .card {
+        width: 90%;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skill-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .contact-page-content {
+        padding: 15px;
+    }
+    .contact-info h3, .contact-form-wrapper h3 {
+        font-size: 1.4em;
+    }
+    .contact-info p {
+        font-size: 0.9em;
+    }
+    .submit-button {
+        width: 100%;
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}

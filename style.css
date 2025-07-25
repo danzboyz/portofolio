@@ -1,0 +1,33 @@
+/* Mengimpor Font Google Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Mengimpor file CSS terpisah dari subfolder 'css' */
+@import url('css/base.css');
+@import url('css/layout.css');
+@import url('css/components.css');
+
+/* Variabel CSS global untuk konsistensi tema */
+:root {
+    --green-glow: #00ff00;
+    --green-glow-alpha: rgba(0, 255, 0, 0.5);
+    --green-glow-strong: rgba(0, 255, 0, 0.7);
+    --red-glow: #ff0000;
+    --red-glow-alpha: rgba(255, 0, 0, 0.5);
+    --red-glow-strong: rgba(255, 0, 0, 0.7);
+    --blue-glow: #0000ff;
+    --blue-glow-alpha: rgba(0, 0, 255, 0.5);
+    --blue-glow-strong: rgba(0, 0, 255, 0.7);
+    --dark-bg: #1a1a1a;
+    --card-bg: #121212;
+    --text-light: #f0f0f0;
+    --text-medium: #b0b0b0;
+    --input-bg: #000000;
+}
+
+/* Reset CSS dasar (opsional tapi direkomendasikan) */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}

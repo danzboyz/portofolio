@@ -1,0 +1,379 @@
+/* --- Base Card Styles (for Homepage Featured Projects Cards) --- */
+.card-container {
+    perspective: 1000px; /* Diperlukan untuk efek 3D */
+}
+
+.card {
+    width: 300px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d; /* Penting untuk elemen anak 3D */
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease, z-index 0.1s ease 0.5s;
+    z-index: 1;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Efek hover untuk kartu yang tidak aktif */
+.card:not(.is-active):hover {
+    transform: rotateY(10deg) rotateX(5deg) scale(1.02);
+}
+
+/* Gaya untuk kartu aktif (saat diklik) */
+.card.is-active {
+    transform: translateZ(150px) rotateY(5deg) rotateX(2deg) scale(1.1);
+    z-index: 100; /* Pastikan kartu aktif di atas yang lain */
+}
+
+.card.is-active:hover {
+    transform: translateZ(160px) rotateY(7deg) rotateX(3deg) scale(1.12);
+}
+
+.card-image {
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+    transform: translateZ(1px); /* Pastikan overlay di atas gambar tapi di bawah konten */
+}
+
+.card-content {
+    padding: 20px;
+    color: var(--text-light);
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.card-date {
+    position: absolute;
+    top: -45px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Efek blur untuk latar belakang */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 8px 15px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4); /* Default green glow */
+    transform: translateZ(40px); /* Memindahkan elemen ke depan di sumbu Z */
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-date {
+    transform: translateZ(50px) scale(1.05);
+}
+
+.card-date .month {
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 3px;
+    letter-spacing: 0.05em;
+}
+
+.card-date .day {
+    font-size: 1.8em;
+    font-weight: 700;
+    display: block;
+}
+
+.card-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.5); /* Default green glow */
+    transform: translateZ(30px);
+    transition: transform 0.3s ease;
+}
+.card:hover .card-title {
+    transform: translateZ(40px);
+}
+
+.card-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: var(--text-medium);
+    transform: translateZ(20px);
+    transition: transform 0.3s ease;
+}
+.card:hover .card-description {
+    transform: translateZ(30px);
+}
+
+.see-more {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform: translateZ(25px);
+}
+
+.see-more::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0); /* Awalnya tidak terlihat */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+.see-more:hover::after {
+    transform: scaleX(1); /* Terlihat saat hover */
+    transform-origin: bottom left;
+}
+
+
+/* --- Specific Card Colors (Homepage Cards) --- */
+.green-card {
+    box-shadow: 0 10px 30px var(--green-glow-alpha);
+    border: 1px solid var(--green-glow-alpha);
+}
+.green-card:not(.is-active):hover {
+    box-shadow: 0 20px 50px var(--green-glow-alpha);
+}
+.green-card.is-active {
+    box-shadow: 0 30px 80px var(--green-glow-strong);
+}
+.green-card.is-active:hover {
+    box-shadow: 0 40px 100px rgba(0, 255, 0, 1);
+}
+.green-card .card-image {
+    background: url('../images/ss1.png') center/cover no-repeat; /* PATH GAMBAR KARTU HIJAU */
+}
+.green-card .card-date {
+    color: var(--green-glow);
+    box-shadow: 0 0 15px var(--green-glow-alpha);
+}
+.green-card .card-title {
+    color: var(--green-glow);
+    text-shadow: 0 0 8px var(--green-glow-alpha);
+}
+.green-card .see-more {
+    color: var(--green-glow);
+}
+.green-card .see-more::after {
+    background-color: var(--green-glow);
+}
+.green-card .see-more:hover {
+    color: #99ff99;
+}
+
+
+.red-card {
+    box-shadow: 0 10px 30px var(--red-glow-alpha);
+    border: 1px solid var(--red-glow-alpha);
+}
+.red-card:not(.is-active):hover {
+    box-shadow: 0 20px 50px var(--red-glow-alpha);
+}
+.red-card.is-active {
+    box-shadow: 0 30px 80px var(--red-glow-strong);
+}
+.red-card.is-active:hover {
+    box-shadow: 0 40px 100px rgba(255, 0, 0, 1);
+}
+.red-card .card-image {
+    background: url('../images/ss2.png') center/cover no-repeat; /* PATH GAMBAR KARTU MERAH */
+}
+.red-card .card-date {
+    color: var(--red-glow);
+    box-shadow: 0 0 15px var(--red-glow-alpha);
+}
+.red-card .card-title {
+    color: var(--red-glow);
+    text-shadow: 0 0 8px var(--red-glow-alpha);
+}
+.red-card .see-more {
+    color: var(--red-glow);
+}
+.red-card .see-more::after {
+    background-color: var(--red-glow);
+}
+.red-card .see-more:hover {
+    color: #ff9999;
+}
+
+
+.blue-card {
+    box-shadow: 0 10px 30px var(--blue-glow-alpha);
+    border: 1px solid var(--blue-glow-alpha);
+}
+.blue-card:not(.is-active):hover {
+    box-shadow: 0 20px 50px var(--blue-glow-alpha);
+}
+.blue-card.is-active {
+    box-shadow: 0 30px 80px var(--blue-glow-strong);
+}
+.blue-card.is-active:hover {
+    box-shadow: 0 40px 100px rgba(0, 0, 255, 1);
+}
+.blue-card .card-image {
+    background: url('../images/event_blue.gif') center/cover no-repeat; /* PATH GAMBAR KARTU BIRU */
+}
+.blue-card .card-date {
+    color: var(--blue-glow);
+    box-shadow: 0 0 15px var(--blue-glow-alpha);
+}
+.blue-card .card-title {
+    color: var(--blue-glow);
+    text-shadow: 0 0 8px var(--blue-glow-alpha);
+}
+.blue-card .see-more {
+    color: var(--blue-glow);
+}
+.blue-card .see-more::after {
+    background-color: var(--blue-glow);
+}
+.blue-card .see-more:hover {
+    color: #9999ff;
+}
+
+/* --- Individual Skill Card (for Skills Page) --- */
+.skill-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+}
+
+.skill-icon {
+    font-size: 3em;
+    color: var(--green-glow);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--green-glow-alpha);
+    transform: translateZ(20px);
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: translateZ(30px) rotateY(10deg);
+}
+
+.skill-title {
+    font-size: 1.5em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    transform: translateZ(10px);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    transform: translateZ(5px);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #00ff00, #39ff14); /* Gradien hijau */
+    border-radius: 5px;
+    box-shadow: 0 0 8px var(--green-glow);
+    transition: width 1s ease-out; /* Animasi pengisian progress bar */
+}
+
+/* Specific Progress Percentages */
+.html-progress { width: 95%; }
+.css-progress { width: 90%; }
+.js-progress { width: 65%; }
+.react-progress { width: 65%; }
+.node-progress { width: 50%; }
+.db-progress { width: 50%; }
+
+.skill-level {
+    font-size: 0.9em;
+    color: var(--text-medium);
+    margin-top: 5px;
+}
+
+/* --- About Page Components --- */
+.profile-image-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Membuat gambar lingkaran */
+    overflow: hidden;
+    border: 5px solid var(--green-glow);
+    box-shadow: 0 0 25px var(--green-glow-alpha);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px var(--green-glow-strong);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar mengisi container tanpa terdistorsi */
+    display: block;
+}
+
+.vm-card {
+    background-color: #0c0c0c;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+}
+
+.vm-icon {
+    font-size: 3em;
+    color: var(--green-glow);
+    margin-bottom: 15px;
+    text-shadow: 0 0 12px var(--green-glow-alpha);
+}
+
+.vm-card h4 {
+    font-size: 1.6em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.vm-card p {
+    font-size: 0.95em;
+    color: var(--text-medium);
+    line-height: 1.6;
+}

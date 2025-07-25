@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="index.html" class="logo">MyProfile</a>
+        </div>
+        <ul class="navbar-nav">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="skills.html" class="nav-link">Skills</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section hero-contact">
+        <div class="hero-content">
+            <h1 class="hero-title">Get In Touch</h1>
+            <p class="hero-subtitle">
+                Ada pertanyaan atau sekadar ingin menyapa? Jangan ragu untuk menghubungi saya!
+            </p>
+            <a href="#contact-form" class="hero-button">Send a Message <i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <div class="main-content contact-page-content" id="contact-form">
+        <h2 class="section-title">Reach Out to Me</h2>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-map-marker-alt"></i> South Tangerang, Banten, Indonesia</p>
+                <p><i class="fas fa-envelope"></i> muhammadwildanshubhan@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +62 858-8133-4119</p>
+                <div class="social-icons contact-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/_wldnshbhn?igsh=MWg0dzg1aHh4YXN1aQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <h3>Send Me a Message</h3>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 MyProfile. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/muhammadwildan.shubhan/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/shubhanwil48378?s=21"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/_wldnshbhn?igsh=MWg0dzg1aHh4YXN1aQ%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-wildan-shubhan-0337a0373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
